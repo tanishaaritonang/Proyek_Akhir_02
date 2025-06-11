@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Daftar TanyaBot</title>
+     <link rel="stylesheet" href="/css/login.css">
+</head>
+
+<body>
+    <div class="main-container">
+        <div class="illustration-side">
+            <img src="./img/logo.png" alt="Robot Illustration" width="200px" height="auto">
+            <h2>Yuk ngobrol seru di TanyaBot!</h2>
+            <p>Ada teman virtual yang selalu siap membantu kamu!</p>
+        </div>
+
+        <div class="register-side">
+            <div class="register-container">
+                <div class="register-header">
+                    <h4>
+                        <img src="./img/logo.png" width="40px" height="auto" alt="TanyaBot">
+                        <span>TanyaBot</span>
+                    </h4>
+                    <h1>Yuk, Mulai Petualanganmu! <span class="bot-emoji">🤖✨</span></h1>
+                    <p>Ayo daftar dan ngobrol seru bareng robot temanmu!</p>
+                </div>
+
+                <!-- Message container for errors -->
+                <p id="message"></p>
+
+                <!-- Email confirmation container -->
+                <div id="confirmation-container">
+                    <h4>Yeay! Registrasi Berhasil! <span class="bot-emoji">🎉</span></h4>
+                    <p>Kami sudah mengirim email ajaib ke <strong id="confirm-email"></strong>.</p>
+                    <p>Cek kotak masukmu dan klik tautan konfirmasi untuk mengaktifkan akunmu!</p>
+                    <p>Setelah konfirmasi, kamu bisa <a href="/login">login di sini</a>.</p>
+                </div>
+
+                <!-- Registration form -->
+                <form id="signUpForm">
+                    <div class="input-group">
+                        <label for="email">Email <span class="bot-emoji">📧</span></label>
+                        <input type="email" id="email" name="email" required placeholder="emailkamu@contoh.com" />
+                    </div>
+                    <div class="input-group">
+                        <label for="password">Password <span class="bot-emoji">🔒</span></label>
+                        <input type="password" id="password" name="password" required
+                            placeholder="Buat password rahasiamu" />
+                    </div>
+
+                    <button type="submit" class="sign-button">Daftar Sekarang! <span
+                            class="bot-emoji">🚀</span></button>
+                </form>
+
+                <div class="login-link">
+                    <p>Sudah punya akun? <a href="/login">Masuk di sini</a> <span class="bot-emoji">😊</span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+
+<script>
+    document.getElementById("signUpForm").addEventListener("submit", async (e) => {
+        e.preventDefault();
+
+        const email = document.getElementById("email").value;
+        const password = document.getElementById("password").value;
+        const messageElement = document.getElementById("message");
+        const confirmationContainer = document.getElementById("confirmation-container");
+        const confirmEmailSpan = document.getElementById("confirm-email");
+        const signUpForm = document.getElementById("signUpForm");
+
+        try {
+            const response = await fetch("/register", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({ email, password }),
+            });
+
+            const data = await response.json();
+
+            if (data.success) {
+                // Check if email confirmation is required
+                if (data.requiresEmailConfirmation) {
+                    // Show email confirmation message
+                    messageElement.textContent = "";
+                    messageElement.style.color = "";
+                    confirmEmailSpan.textContent = email;
+                    confirmationContainer.style.display = "block";
+                    signUpForm.style.display = "none";
+                } else {
+                    // If no email confirmation needed, redirect to login
+                    messageElement.style.color = "#4285F4";
+                    messageElement.textContent = data.message;
+                    setTimeout(() => {
+                        window.location.href = "/login";
+                    }, 1500);
+                }
+            } else {
+                messageElement.style.color = "#EA4335";
+                messageElement.textContent = data.message;
+            }
+        } catch (error) {
+            messageElement.style.color = "#EA4335";
+            messageElement.textContent = "Oops! Ada error. Coba lagi ya!";
+            console.error("Error:", error);
+        }
+    });
+</script>
