@@ -1,0 +1,406 @@
+import {
+  RunnableSequence,
+  RunnablePassthrough,
+} from "@langchain/core/runnables";
+import { ChatOpenAI } from "@langchain/openai";
+import { StringOutputParser } from "@langchain/core/output_parsers";
+import { PromptTemplate } from "@langchain/core/prompts";
+import { retriever } from "./retriever.js";
+import { combineDocuments } from "./combineDocuments.js";
+import { formatConvHistory } from "./formatConvHistory.js";
+import { createClient } from "@supabase/supabase-js";
+import { supabase } from "./db/db.js";
+
+const supabaseUrl = process.env.SUPABASE_URL;
+const supabaseKey = process.env.SUPABASE_KEY;
+const openAIApiKey = process.env.OPENAI_API_KEY;
+
+// Use faster model
+const llm = new ChatOpenAI({
+  openAIApiKey,
+  modelName: "gpt-3.5-turbo", // Even faster than gpt-4o-mini
+  temperature: 0.3, // Lower temperature for faster processing
+  streaming: true,
+  maxTokens: 150, // Limit response length for speed
+});
+
+const client = createClient(supabaseUrl, supabaseKey);
+export default client;
+
+// Caching systems - like pre-cooking popular dishes
+const convHistory = new Map();
+const responseCache = new Map();
+const retrieverCache = new Map();
+const CACHE_TTL = 300000; // 5 minutes
+const MAX_CACHE_SIZE = 1000;
+
+// Simplified prompt - like a simple recipe card
+const answerTemplate = `Jawab singkat (max 3 kalimat) pakai analogi sederhana untuk anak.
+
+Context: {context}
+History: {conv_history}
+Question: {question}
+
+Answer:`;
+
+const answerPrompt = PromptTemplate.fromTemplate(answerTemplate);
+
+// Cached retriever - like having ingredients ready
+const cachedRetriever = async (question) => {
+  const cacheKey = question.toLowerCase().trim();
+  const now = Date.now();
+  
+  // Check cache first
+  if (retrieverCache.has(cacheKey)) {
+    const cached = retrieverCache.get(cacheKey);
+    if (now - cached.timestamp < CACHE_TTL) {
+      return cached.data;
+    }
+    retrieverCache.delete(cacheKey);
+  }
+  
+  // If not cached, retrieve and cache
+  try {
+    const docs = await retriever.invoke(question);
+    const combined = combineDocuments(docs);
+    
+    // Manage cache size
+    if (retrieverCache.size >= MAX_CACHE_SIZE) {
+      const oldestKey = retrieverCache.keys().next().value;
+      retrieverCache.delete(oldestKey);
+    }
+    
+    retrieverCache.set(cacheKey, {
+      data: combined,
+      timestamp: now
+    });
+    
+    return combined;
+  } catch (error) {
+    console.error("Retriever error:", error);
+    return ""; // Return empty context if retrieval fails
+  }
+};
+
+// Optimized chain with parallel processing where possible
+const createOptimizedChain = () => {
+  return RunnableSequence.from([
+    async (input) => {
+      // Run context retrieval and history formatting in parallel
+      const [context] = await Promise.all([
+        cachedRetriever(input.question),
+        // History is already formatted, no async needed
+      ]);
+      
+      return {
+        context,
+        question: input.question,
+        conv_history: input.conv_history,
+      };
+    },
+    answerPrompt,
+    llm,
+    new StringOutputParser(),
+  ]);
+};
+
+const chain = createOptimizedChain();
+
+/**
+ * Simulate streaming for cached responses
+ */
+async function simulateStreaming(text, onToken) {
+  const words = text.split(' ');
+  for (let i = 0; i < words.length; i++) {
+    const chunk = words[i] + (i < words.length - 1 ? ' ' : '');
+    if (onToken) onToken(chunk);
+    // Small delay to simulate natural streaming
+    await new Promise(resolve => setTimeout(resolve, 30));
+  }
+}
+
+/**
+ * Main conversation function - optimized for speed
+ */
+export async function progressConversation(question, sessionId, userId, onToken) {
+  try {
+    const startTime = Date.now();
+    
+    // Initialize session history
+    if (!convHistory.has(sessionId)) {
+      convHistory.set(sessionId, []);
+    }
+    const sessionHistory = convHistory.get(sessionId);
+    
+    // Create cache key for complete response caching
+    const historyKey = sessionHistory.slice(-4).join('|'); // Last 2 Q&A pairs
+    const cacheKey = `${question.toLowerCase().trim()}_${historyKey}`;
+    
+    // Check response cache first - like serving pre-made food
+    if (responseCache.has(cacheKey)) {
+      const cached = responseCache.get(cacheKey);
+      const now = Date.now();
+      
+      if (now - cached.timestamp < CACHE_TTL) {
+        console.log(`Cache hit! Served in ${Date.now() - startTime}ms`);
+        
+        // Simulate streaming for cached response
+        await simulateStreaming(cached.data, onToken);
+        
+        // Update history
+        sessionHistory.push(question);
+        sessionHistory.push(cached.data);
+        convHistory.set(sessionId, sessionHistory);
+        
+        // Background logging (non-blocking)
+        setImmediate(() => backgroundLogging(cached.data, question, sessionId, userId));
+        
+        return cached.data;
+      } else {
+        responseCache.delete(cacheKey);
+      }
+    }
+    
+    // Prepare input
+    const input = {
+      question,
+      conv_history: formatConvHistory(sessionHistory),
+    };
+    
+    // Stream response from LLM
+    let fullResponse = "";
+    const stream = await chain.stream(input);
+    
+    for await (const chunk of stream) {
+      fullResponse += chunk;
+      if (onToken) onToken(chunk);
+    }
+    
+    // Cache the response
+    if (responseCache.size >= MAX_CACHE_SIZE) {
+      const oldestKey = responseCache.keys().next().value;
+      responseCache.delete(oldestKey);
+    }
+    
+    responseCache.set(cacheKey, {
+      data: fullResponse,
+      timestamp: Date.now()
+    });
+    
+    // Update history
+    sessionHistory.push(question);
+    sessionHistory.push(fullResponse);
+    
+    // Keep history manageable (last 10 exchanges)
+    if (sessionHistory.length > 20) {
+      sessionHistory.splice(0, sessionHistory.length - 20);
+    }
+    convHistory.set(sessionId, sessionHistory);
+    
+    console.log(`Response generated in ${Date.now() - startTime}ms`);
+    
+    // Background processes (non-blocking)
+    setImmediate(() => backgroundLogging(fullResponse, question, sessionId, userId));
+    
+    return fullResponse;
+    
+  } catch (error) {
+    console.error("Error in conversation:", error);
+    
+    // Fallback response
+    const fallback = "Maaf, terjadi kesalahan. Silakan coba lagi.";
+    if (onToken) {
+      await simulateStreaming(fallback, onToken);
+    }
+    return fallback;
+  }
+}
+
+/**
+ * Optimized background logging with batch operations
+ */
+async function backgroundLogging(response, question, sessionId, userId) {
+  try {
+    // Batch all database operations
+    await Promise.allSettled([
+      // Ensure session exists and insert messages in one go
+      (async () => {
+        try {
+          // Use upsert for session to avoid duplicate checks
+          await supabase.from("sessions").upsert([
+            {
+              id: sessionId,
+              created_at: new Date().toISOString(),
+              user_id: userId,
+            },
+          ], { onConflict: 'id' });
+
+          // Batch insert messages
+          await supabase.from("messages").insert([
+            {
+              session_id: sessionId,
+              message_type: "question",
+              body: question,
+              created_at: new Date().toISOString(),
+            },
+            {
+              session_id: sessionId,
+              message_type: "response", 
+              body: response,
+              created_at: new Date().toISOString(),
+            },
+          ]);
+        } catch (error) {
+          console.error("Database logging error:", error);
+        }
+      })(),
+      
+      // Handle embeddings separately and non-blocking
+      (async () => {
+        try {
+          const isQuestion = /^(apa|siapa|kapan|dimana|mengapa|bagaimana|apakah|bisakah|dapatkah)\b/i.test(question) || 
+                           /^(what|who|when|where|why|how|is|are|can|could|would|will|do|does|did|have|has|may|might)\b/i.test(question) || 
+                           question.trim().endsWith("?");
+
+          if (isQuestion) {
+            const embeddingResponse = await fetch("https://api.openai.com/v1/embeddings", {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+                Authorization: `Bearer ${openAIApiKey}`,
+              },
+              body: JSON.stringify({
+                input: question,
+                model: "text-embedding-3-small",
+              }),
+            });
+            
+            if (embeddingResponse.ok) {
+              const embeddingData = await embeddingResponse.json();
+              const embedding = embeddingData.data[0].embedding;
+
+              // Run similarity and storage in parallel
+              await Promise.allSettled([
+                getSimilarPopularPrompts(question, true, embedding),
+                storeUserPrompt(question, embedding),
+              ]);
+            }
+          }
+        } catch (error) {
+          console.error("Embedding processing error:", error);
+        }
+      })(),
+    ]);
+  } catch (error) {
+    console.error("Background logging failed:", error);
+  }
+}
+
+// Optimized similarity search with better error handling
+async function getSimilarPopularPrompts(question, incrementSimilar = false, embedding) {
+  try {
+    const { data, error } = await client.rpc("find_similar_prompts", {
+      query_embedding: embedding,
+      similarity_threshold: 0.6,
+      match_count: 5,
+    });
+
+    if (error) throw error;
+    if (!data || data.length === 0) return [];
+
+    const filtered = data.filter(
+      (item) => item.similarity > 0.7 && 
+               item.prompt.toLowerCase() !== question.toLowerCase()
+    );
+
+    if (incrementSimilar && filtered.length > 0) {
+      // Batch update similar prompts
+      const updates = filtered.map((item) =>
+        client
+          .from("user_prompts")
+          .update({
+            count: item.count + 1,
+            last_used_at: new Date().toISOString(),
+          })
+          .eq("id", item.id)
+      );
+      
+      await Promise.allSettled(updates);
+    }
+
+    return filtered
+      .sort((a, b) => b.count - a.count)
+      .slice(0, 3)
+      .map((item) => item.prompt);
+      
+  } catch (error) {
+    console.error("Error finding similar prompts:", error);
+    return [];
+  }
+}
+
+// Optimized prompt storage with conflict handling
+async function storeUserPrompt(question, embedding) {
+  try {
+    // Use upsert to handle duplicates more efficiently
+    await client.from("user_prompts").upsert([{
+      prompt: question,
+      count: 1,
+      embedding: embedding,
+      last_used_at: new Date().toISOString(),
+    }], {
+      onConflict: 'prompt',
+      ignoreDuplicates: false
+    });
+    
+    // If upsert doesn't work as expected (depends on your schema), fallback to increment
+    await client.rpc('increment_prompt_count', { 
+      prompt_text: question 
+    });
+    
+  } catch (error) {
+    // Fallback to original logic if upsert fails
+    try {
+      const { data: existingPrompts } = await client
+        .from("user_prompts")
+        .select("id, count")
+        .eq("prompt", question)
+        .limit(1);
+
+      if (existingPrompts && existingPrompts.length > 0) {
+        await client
+          .from("user_prompts")
+          .update({
+            count: existingPrompts[0].count + 1,
+            last_used_at: new Date().toISOString(),
+          })
+          .eq("id", existingPrompts[0].id);
+      } else {
+        await client.from("user_prompts").insert({
+          prompt: question,
+          count: 1,
+          embedding: embedding,
+          last_used_at: new Date().toISOString(),
+        });
+      }
+    } catch (fallbackError) {
+      console.error("Error storing prompt (fallback failed too):", fallbackError);
+    }
+  }
+}
+
+// Utility function to clear caches if needed
+export function clearCaches() {
+  responseCache.clear();
+  retrieverCache.clear();
+  console.log("Caches cleared");
+}
+
+// Utility function to get cache stats
+export function getCacheStats() {
+  return {
+    responseCache: responseCache.size,
+    retrieverCache: retrieverCache.size,
+    conversationSessions: convHistory.size
+  };
+}

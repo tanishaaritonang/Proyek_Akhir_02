@@ -1,0 +1,72 @@
+[
+  {
+    "question": "Kenapa lebah membuat madu?",
+    "groundTruth": "Lebah membuat madu sebagai cadangan makanan di sarangnya, terutama untuk bertahan hidup saat musim dingin ketika nektar bunga sulit ditemukan.",
+    "prediction": "Lebah seperti koki kecil yang menyimpan makanan manis untuk kelompoknya.\nMereka mengumpulkan nektar dari bunga dan mengubahnya menjadi madu di sarang.\nTanpa madu, lebah tidak punya cadangan makanan, dan kita juga kehilangan manfaatnya.\nMadu hasil kerja keras—belajarlah dari lebah yang rajin dan rapi!",
+    "timestamp": "2025-07-28T04:52:09.952Z",
+    "responseTimeMs": 11344
+  },
+  {
+    "question": "Kenapa ikan punya insang?",
+    "groundTruth": "Insang membantu ikan mengambil oksigen dari air, berfungsi seperti paru-paru yang disesuaikan untuk kehidupan di dalam air.",
+    "prediction": "Insang ikan adalah seperti tabung penyaring yang membantu mereka bernapas di dalam air.\nDengan insang, ikan dapat menyerap oksigen dari air untuk mendukung kehidupannya.\nJika ikan tidak memiliki insang, mereka akan kesulitan bernapas di dalam air.\nInsang adalah anugerah alam yang luar biasa untuk memastikan ikan bisa hidup dengan nyaman di dalam air!",
+    "timestamp": "2025-07-28T04:52:14.455Z",
+    "responseTimeMs": 4503
+  },
+  {
+    "question": "Kenapa daun-daun jatuh saat musim gugur?",
+    "groundTruth": "Pohon melepaskan daunnya untuk menghemat energi dan air selama musim dingin, serta mempersiapkan diri untuk pertumbuhan baru di musim semi.",
+    "prediction": "Daun jatuh seperti rambut yang rontok saat sudah tua.\nKetika musim gugur tiba, pohon melepaskan daun-daunnya agar bisa bersiap menghadapi musim dingin.\nJika daun terus menempel, pohon akan sulit bertahan dan tumbuh dengan sehat.\nMembiarkan daun jatuh adalah cara alam memberi kesempatan untuk kehidupan yang baru!",
+    "timestamp": "2025-07-28T04:52:18.201Z",
+    "responseTimeMs": 3745
+  },
+  {
+    "question": "Kenapa kucing mendengkur?",
+    "groundTruth": "Kucing mendengkur saat merasa nyaman atau ingin menenangkan diri, sebagai ekspresi rasa aman atau proses pemulihan.",
+    "prediction": "Dengkuran kucing seperti lagu tidur yang menenangkan hati.\nMereka mendengkur saat senang atau nyaman, seperti manusia tersenyum.\nKalau kucing tidak mendengkur, mungkin mereka sedang stres atau tidak baik-baik saja.\nSenyumlah saat mendengarkan dengkuran kucing—mereka juga butuh kasih sayang!",
+    "timestamp": "2025-07-28T04:52:22.561Z",
+    "responseTimeMs": 4360
+  },
+  {
+    "question": "Kenapa bintang berkelap-kelip?",
+    "groundTruth": "Bintang tampak berkelap-kelip karena cahayanya melewati atmosfer Bumi yang bergolak, membiaskan cahaya secara tidak stabil.",
+    "prediction": "Bintang seperti lampu kecil yang digoyangkan angin malam.\nCahayanya yang mencapai atmosfer Bumi membuatnya tampak berkelap-kelip.\nTanpa fenomena ini, bintang akan terlihat tetap dan stabil di langit.\nIndahnya kelap-kelip bintang membuat malam jadi penuh pesona dan keajaiban!",
+    "timestamp": "2025-07-28T04:52:28.802Z",
+    "responseTimeMs": 6241
+  },
+  {
+    "question": "Kenapa kita bersin?",
+    "groundTruth": "Bersin adalah refleks tubuh untuk membersihkan hidung dari kotoran, kuman, atau partikel yang mengganggu saluran pernapasan.",
+    "prediction": "Bersin seperti sapu otomatis untuk hidung kita.\nSaat ada debu atau kuman masuk, tubuh mengeluarkannya lewat bersin.\nKalau tidak bersin, hidung bisa tetap terganggu dan terasa gatal.\nBersin adalah cara tubuh menjaga saluran pernapasan tetap bersih!",
+    "timestamp": "2025-07-28T04:52:32.371Z",
+    "responseTimeMs": 3569
+  },
+  {
+    "question": "Kenapa laba-laba membuat jaring?",
+    "groundTruth": "Laba-laba membuat jaring untuk menangkap mangsa, menggunakan sutra yang lengket sebagai perangkap alami.",
+    "prediction": "Jaring laba-laba seperti rumah tangga yang cantik dan fungsional untuk keluarganya.\nMereka membuat jaring untuk menangkap mangsa dan bertahan hidup.\nTanpa jaring, laba-laba kesulitan mencari makanan, dan ekosistem pun terpengaruh.\nSelamatkan laba-laba, hargai keajaiban jaring mereka di alam!",
+    "timestamp": "2025-07-28T04:52:36.001Z",
+    "responseTimeMs": 3630
+  },
+  {
+    "question": "Kenapa kita punya alis?",
+    "groundTruth": "Alis melindungi mata dari keringat, air hujan, atau debu, sekaligus membantu ekspresi wajah.",
+    "prediction": "Alis seperti payung kecil yang melindungi mata dari air dan debu.\nAlis membantu mengarahkan keringat dan menjaga mata tetap bersih.\nTanpa alis, mata lebih mudah terganggu dan perih.\nSekecil apa pun bagian tubuhmu, semuanya punya tugas penting!",
+    "timestamp": "2025-07-28T04:52:39.821Z",
+    "responseTimeMs": 3819
+  },
+  {
+    "question": "Kenapa jagung meletus saat dipanaskan?",
+    "groundTruth": "Biji jagung popcorn meletus karena uap air di dalamnya mengembang saat dipanaskan, menciptakan tekanan hingga kulitnya pecah.",
+    "prediction": "Jagung seperti biji yang menunggu waktu untuk berubah bentuk.\nKetika dipanaskan, uap air dalam biji jagung seperti bom waktu yang meledakkan kulitnya.\nProses ini membuat jagung menjadi berlipat-lipat dan enak untuk dinikmati.\nSelamat menikmati jagung popcorn yang lezat, nikmati setiap momennya dengan bahagia!",
+    "timestamp": "2025-07-28T04:52:44.260Z",
+    "responseTimeMs": 4438
+  },
+  {
+    "question": "Kenapa gajah punya belalai?",
+    "groundTruth": "Belalai gajah berfungsi sebagai alat serbaguna untuk makan, minum, bernapas, dan berinteraksi, menggabungkan hidung dengan lengan.",
+    "prediction": "Belalai gajah ibarat tangan serbaguna yang membantu mereka mencari makanan dan minum.\nGajah menggunakan belalai untuk mengambil daun tinggi, mandi, dan bahkan berkomunikasi.\nTanpa belalai, gajah kesulitan menjalani aktivitas sehari-hari dengan lancar.\nBelajarlah dari gajah yang tangguh—kreatif dalam mengatasi tantangan!",
+    "timestamp": "2025-07-28T04:52:47.873Z",
+    "responseTimeMs": 3612
+  }
+]

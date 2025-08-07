@@ -11,7 +11,6 @@ import { formatConvHistory } from "./formatConvHistory.js";
 import { createClient } from "@supabase/supabase-js";
 import { supabase } from "./db/db.js";
 
-
 const supabaseUrl = process.env.SUPABASE_URL;
 const supabaseKey = process.env.SUPABASE_KEY;
 const openAIApiKey = process.env.OPENAI_API_KEY;
@@ -19,7 +18,7 @@ const openAIApiKey = process.env.OPENAI_API_KEY;
 const llm = new ChatOpenAI({ openAIApiKey });
 const client = createClient(supabaseUrl, supabaseKey);
 export default client;
-const convHistory = new Map(); // Stores conversation history by sessionId
+const convHistory = new Map();
 
 const standaloneQuestionTemplate = `Given some conversation history (if any) and a question, convert the question to a standalone question. 
 
@@ -33,16 +32,23 @@ const standaloneQuestionPrompt = PromptTemplate.fromTemplate(
 );
 
 
-const answerTemplate = `You are a helpful and enthusiastic support bot who answers questions based only on the provided context and conversation history. Your name is TanyaBot, 
-endlessly enthusiastic assistant who blends real science with playful analogies to make learning an adventure!
-Use emojis to make learning fun and engaging for children. dont show others question from context in answer,
-Respond in the SAME LANGUAGE as the question. If the question is in Indonesian (Bahasa Indonesia), answer in Indonesian. If the question is in English, answer in English
+const answerTemplate = `You are a helpful, child-friendly, and enthusiastic support bot.
+Answer questions creatively using the given context in simple Indonesian, wrapped in a short narrative (max 4 sentences).
+Always follow this structure for crafting your answer:
+
+Start with a simple analogy
+Give a straightforward facts explanation.
+Briefly explain the consequence.
+End with positive, uplifting words!
+Do not use emojis.
 
 Context: {context}
 Conversation History: {conv_history}
 Question: {question}
 
-Answer:`;
+Answer:
+`
+
 
 
 const answerPrompt = PromptTemplate.fromTemplate(answerTemplate);
@@ -68,9 +74,13 @@ const chain = RunnableSequence.from([
     context: retrieverChain,
     question: ({ original_input }) => original_input.question,
     conv_history: ({ original_input }) => original_input.conv_history,
+    
   },
   answerChain,
 ]);
+
+                        
+
 
 //////
 export async function progressConversation(question, sessionId, userId) {
@@ -80,72 +90,87 @@ export async function progressConversation(question, sessionId, userId) {
     }
     const sessionHistory = convHistory.get(sessionId);
 
+    // Waktu saat user mengirim pertanyaan
+    const questionTime = new Date();
+
+    // 1. Simpan pertanyaan dulu supaya waktu aslinya tercatat
+    const { error: questionInsertError } = await supabase
+      .from("messages")
+      .insert([
+        {
+          session_id: sessionId,
+          message_type: "question",
+          body: question,
+          created_at: questionTime.toISOString(),
+        },
+      ]);
+
+    if (questionInsertError) {
+      console.error("Error storing question:", questionInsertError);
+    }
+
+    // Pastikan session ada di tabel
+    const { data: existingSession, error: sessionError } = await supabase
+      .from("sessions")
+      .select("id")
+      .eq("id", sessionId)
+      .single();
+
+    if (sessionError && !existingSession) {
+      const { error: createError } = await supabase.from("sessions").insert([
+        {
+          id: sessionId,
+          created_at: questionTime.toISOString(),
+          user_id: userId,
+        },
+      ]);
+
+      if (createError) {
+        console.error("Error creating session:", createError);
+      }
+    }
+
+    // 2. Jalankan LLM (ini bagian yang memakan waktu, misalnya 9 detik)
     const response = await chain.invoke({
       question: question,
       conv_history: formatConvHistory(sessionHistory),
     });
 
-    // Update conversation history for this session
+    // Hitung waktu setelah jawaban selesai
+    const responseTime = new Date();
+    const responseDurationMs = responseTime.getTime() - questionTime.getTime();
+
+    // Update conversation history di memory
     sessionHistory.push(question);
     sessionHistory.push(response);
     convHistory.set(sessionId, sessionHistory);
 
-    // create session
-    const { data: existingSession, error: sessionError } = await supabase
-      .from('sessions')
-      .select('id')
-      .eq('id', sessionId)
-      .single();
-
-    if (sessionError && !existingSession) {
-      // Create new session in Supabase
-      const { data: newSession, error: createError } = await supabase
-        .from('sessions')
-        .insert([
-          {
-            id: sessionId,
-            created_at: new Date().toISOString(),
-            user_id: userId,
-          }
-        ])
-        .select();
-
-      if (createError) {
-        console.error('Error creating session:', createError);
-      }
-    }
-
-    // Store messages (question and response) in Supabase
-    const { error: messageError } = await supabase
-      .from('messages')
+    // 3. Simpan jawaban ke DB terpisah
+    const { error: responseInsertError } = await supabase
+      .from("messages")
       .insert([
         {
           session_id: sessionId,
-          message_type: 'question',
-          body: question,
-          created_at: new Date().toISOString()
-        },
-        {
-          session_id: sessionId,
-          message_type: 'response',
+          message_type: "response",
           body: response,
-          created_at: new Date().toISOString()
-        }
+          created_at: responseTime.toISOString(),
+          response_duration_ms: responseDurationMs, // kolom tambahan
+        },
       ]);
 
-    if (messageError) {
-      console.error('Error storing messages:', messageError);
+    if (responseInsertError) {
+      console.error("Error storing response:", responseInsertError);
     }
 
+    // Deteksi apakah input berupa pertanyaan
     const isQuestion =
       /^(what|who|when|where|why|how|is|are|can|could|would|will|do|does|did|have|has|may|might)\b/i.test(
         question
       ) || question.trim().endsWith("?");
 
-    // Only store in database if it's a question
+    // Simpan embedding jika ini pertanyaan
     if (isQuestion) {
       try {
-        // Store the prompt with its embedding
         const embeddingResponse = await fetch(
           "https://api.openai.com/v1/embeddings",
           {
@@ -167,7 +192,7 @@ export async function progressConversation(question, sessionId, userId) {
         Promise.all([
           getSimilarPopularPrompts(question, true, embedding),
           storeUserPrompt(question, embedding),
-        ]).catch(error => {
+        ]).catch((error) => {
           console.error("Error in background tasks:", error);
         });
       } catch (error) {
@@ -175,12 +200,14 @@ export async function progressConversation(question, sessionId, userId) {
       }
     }
 
+    // Kembalikan jawaban ke user
     return response;
   } catch (error) {
     console.error("Error in conversation:", error);
     return "I'm sorry, I encountered an error. Please try again or contact support.";
   }
 }
+
 
 async function getSimilarPopularPrompts(
   question,
@@ -204,7 +231,7 @@ async function getSimilarPopularPrompts(
         item.prompt.toLowerCase() !== question.toLowerCase()
     );
 
-    console.log("Filtered similar prompts:", filtered);
+    // console.log("Filtered similar prompts:", filtered); PENTING
 
     // If we're incrementing similar prompts (for when a question is asked)
     if (incrementSimilar && filtered.length > 0) {

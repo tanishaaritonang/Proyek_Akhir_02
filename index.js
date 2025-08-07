@@ -54,9 +54,18 @@ const upload = multer({ storage: storage });
 // Add language detection middleware
 const detectLanguage = (req, res, next) => {
   const acceptedLanguage = req.headers["accept-language"];
-  req.language = acceptedLanguage?.startsWith("en") ? "en" : "id"; // Hanya ID atau EN
+  
+  // Default ke 'id' (Bahasa Indonesia)
+  req.language = "id";
+  
+  // Jika bahasa yang diterima diawali dengan 'en', ubah ke 'en'
+  if (acceptedLanguage?.startsWith("en")) {
+    req.language = "en";
+  }
+
   next();
 };
+
 
 app.use(detectLanguage);
 app.use(cookieParser());

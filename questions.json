@@ -1,0 +1,42 @@
+[
+  {
+    "question": "Kenapa lebah membuat madu?",
+    "groundTruth": "Lebah membuat madu sebagai cadangan makanan di sarangnya, terutama untuk bertahan hidup saat musim dingin ketika nektar bunga sulit ditemukan."
+  },
+  {
+    "question": "Kenapa ikan punya insang?",
+    "groundTruth": "Insang membantu ikan mengambil oksigen dari air, berfungsi seperti paru-paru yang disesuaikan untuk kehidupan di dalam air."
+  },
+  {
+    "question": "Kenapa daun-daun jatuh saat musim gugur?",
+    "groundTruth": "Pohon melepaskan daunnya untuk menghemat energi dan air selama musim dingin, serta mempersiapkan diri untuk pertumbuhan baru di musim semi."
+  },
+  {
+    "question": "Kenapa kucing mendengkur?",
+    "groundTruth": "Kucing mendengkur saat merasa nyaman atau ingin menenangkan diri, sebagai ekspresi rasa aman atau proses pemulihan."
+  },
+  {
+    "question": "Kenapa bintang berkelap-kelip?",
+    "groundTruth": "Bintang tampak berkelap-kelip karena cahayanya melewati atmosfer Bumi yang bergolak, membiaskan cahaya secara tidak stabil."
+  },
+  {
+    "question": "Kenapa kita bersin?",
+    "groundTruth": "Bersin adalah refleks tubuh untuk membersihkan hidung dari kotoran, kuman, atau partikel yang mengganggu saluran pernapasan."
+  },
+  {
+    "question": "Kenapa laba-laba membuat jaring?",
+    "groundTruth": "Laba-laba membuat jaring untuk menangkap mangsa, menggunakan sutra yang lengket sebagai perangkap alami."
+  },
+  {
+    "question": "Kenapa kita punya alis?",
+    "groundTruth": "Alis melindungi mata dari keringat, air hujan, atau debu, sekaligus membantu ekspresi wajah."
+  },
+  {
+    "question": "Kenapa jagung meletus saat dipanaskan?",
+    "groundTruth": "Biji jagung popcorn meletus karena uap air di dalamnya mengembang saat dipanaskan, menciptakan tekanan hingga kulitnya pecah."
+  },
+  {
+    "question": "Kenapa gajah punya belalai?",
+    "groundTruth": "Belalai gajah berfungsi sebagai alat serbaguna untuk makan, minum, bernapas, dan berinteraksi, menggabungkan hidung dengan lengan."
+  }
+]

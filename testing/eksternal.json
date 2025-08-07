@@ -1,0 +1,253 @@
+{
+  "metadata": {
+    "evaluation_date": "2025-07-26T15:38:41.479188",
+    "total_questions": 20
+  },
+  "overall_scores": {
+    "precision": 0.7733305484914866,
+    "recall": 0.750651423309562,
+    "f1": 0.7612678699504616
+  },
+  "detailed_results": [
+    {
+      "question_id": 1,
+      "question": "Kenapa lebah membuat madu?",
+      "groundTruth": "Lebah membuat madu sebagai cadangan makanan di sarangnya, terutama untuk bertahan hidup saat musim dingin ketika nektar bunga sulit ditemukan.",
+      "prediction": "Bisa dibayangkan kalau lebah itu seperti koki kecil yang rajin memasak makanan manis, yaitu madu, untuk kelompoknya.\nLebah mengumpulkan nektar dari bunga dan mengubahnya menjadi madu di sarang mereka.\nJika tidak ada madu, lebah tidak punya cadangan makanan, dan manusia juga kehilangan manfaatnya.\nAyo belajar dari kerja keras lebah dan jaga kebersihan seperti mereka!",
+      "timestamp": "2025-07-26T08:14:09.138Z",
+      "scores": {
+        "precision": 0.7677161098599542,
+        "recall": 0.7335333533496402,
+        "f1": 0.7499721554389345
+      }
+    },
+    {
+      "question_id": 2,
+      "question": "Kenapa ikan punya insang?",
+      "groundTruth": "Insang membantu ikan mengambil oksigen dari air, berfungsi seperti paru-paru yang disesuaikan untuk kehidupan di dalam air.",
+      "prediction": "Insang merupakan seperti masker penyelam ikan yang membantu mereka bernapas dalam air.\nIkan menggunakan insang untuk menyerap oksigen yang mereka butuhkan untuk hidup di dalam air.\nTanpa insang, ikan tidak bisa bertahan hidup di dalam air dan mereka akan kesulitan bernapas.\nIkan sungguh luar biasa dengan cara unik mereka untuk tetap hidup di lingkungan yang berbeda dengan manusia!",
+      "timestamp": "2025-07-26T08:14:13.129Z",
+      "scores": {
+        "precision": 0.7870159850309869,
+        "recall": 0.7817190807394319,
+        "f1": 0.7842986635272892
+      }
+    },
+    {
+      "question_id": 3,
+      "question": "Kenapa daun-daun jatuh saat musim gugur?",
+      "groundTruth": "Pohon melepaskan daunnya untuk menghemat energi dan air selama musim dingin, serta mempersiapkan diri untuk pertumbuhan baru di musim semi.",
+      "prediction": "Setiap daun seperti pesawat kertas yang turun ke tanah dengan anggun saat musim gugur tiba.\nDaun-daun jatuh karena pohonnya sudah siap memasuki musim dingin.\nJatuhnya daun menyiratkan bahwa alam sedang berubah untuk beristirahat sejenak sebelum memulai siklus baru.\nJadi, nikmati keindahan musim gugur yang penuh warna dan semangat baru yang akan datang!",
+      "timestamp": "2025-07-26T08:14:21.668Z",
+      "scores": {
+        "precision": 0.7602192544081126,
+        "recall": 0.723776039462982,
+        "f1": 0.7414238405997831
+      }
+    },
+    {
+      "question_id": 4,
+      "question": "Kenapa kucing mendengkur?",
+      "groundTruth": "Kucing mendengkur saat merasa nyaman atau ingin menenangkan diri, sebagai ekspresi rasa aman atau proses pemulihan.",
+      "prediction": "Kucing mendengkur seperti mesin penenang hati yang menghadirkan kedamaian.\nMereka mendengkur saat merasa nyaman, bahagia, atau sedang bersantai.\nDengkuran kucing juga dapat menenangkan manusia yang sedang stres atau kelelahan.\nDengarkanlah dengkuran kucing, karena ia bisa membawa ketenangan dalam kehidupan sehari-hari!",
+      "timestamp": "2025-07-26T08:14:25.788Z",
+      "scores": {
+        "precision": 0.8270543196378012,
+        "recall": 0.789868067951128,
+        "f1": 0.8079640305701562
+      }
+    },
+    {
+      "question_id": 5,
+      "question": "Kenapa bintang berkelap-kelip?",
+      "groundTruth": "Bintang tampak berkelap-kelip karena cahayanya melewati atmosfer Bumi yang bergolak, membiaskan cahaya secara tidak stabil.",
+      "prediction": "Bintang seperti lampu kecil yang ditiup angin sehingga cahayanya berkelap-kelip dengan indah di langit.\nHal ini disebabkan oleh belokan cahaya bintang di atmosfer Bumi yang membuatnya tampak berkelip.\nTanpa atmosfer, bintang akan terlihat lebih stabil tanpa kelap-kelip yang menawan.\nMari hiasi langit malam dengan cahaya indah bintang yang berkelap-kelip!",
+      "timestamp": "2025-07-26T08:14:29.677Z",
+      "scores": {
+        "precision": 0.7898327820550706,
+        "recall": 0.7536601562275388,
+        "f1": 0.7713095417367493
+      }
+    },
+    {
+      "question_id": 6,
+      "question": "Kenapa kita bersin?",
+      "groundTruth": "Bersin adalah refleks tubuh untuk membersihkan hidung dari kotoran, kuman, atau partikel yang mengganggu saluran pernapasan.",
+      "prediction": "Bersin seperti sapu otomatis untuk hidung kita.\nSaat ada debu atau kuman masuk, tubuh mengeluarkannya lewat bersin.\nKalau tidak bersin, hidung bisa tetap terganggu dan terasa gatal.\nBersin adalah cara tubuh menjaga saluran pernapasan tetap bersih! Semangat untuk tetap menjaga kesehatan hidung dengan bersin, Sahabat!",
+      "timestamp": "2025-07-26T08:14:33.018Z",
+      "scores": {
+        "precision": 0.7645886939148246,
+        "recall": 0.7186486219296351,
+        "f1": 0.740750075101924
+      }
+    },
+    {
+      "question_id": 7,
+      "question": "Kenapa laba-laba membuat jaring?",
+      "groundTruth": "Laba-laba membuat jaring untuk menangkap mangsa, menggunakan sutra yang lengket sebagai perangkap alami.",
+      "prediction": "Jika laba-laba seperti tukang jahit dunia kecil yang membuat jaring untuk rumahnya.\nMereka membuat jaring dari benang yang kuat untuk menangkap makanan seperti serangga.\nTanpa jaring, laba-laba tidak bisa mendapatkan makanan yang mereka butuhkan.\nHargailah karya seni alam laba-laba dan belajarlah rajin bekerja seperti mereka!",
+      "timestamp": "2025-07-26T08:14:36.808Z",
+      "scores": {
+        "precision": 0.800846328734398,
+        "recall": 0.769072986284558,
+        "f1": 0.7845991692288852
+      }
+    },
+    {
+      "question_id": 8,
+      "question": "Kenapa kita punya alis?",
+      "groundTruth": "Alis melindungi mata dari keringat, air hujan, atau debu, sekaligus membantu ekspresi wajah.",
+      "prediction": "Di dalam dunia yang luas ini, alis mata seperti payung kecil yang melindungi mata dari air dan debu. Alis membantu menjaga mata tetap bersih dan mengarahkan keringat agar tidak mengganggu penglihatan. Tanpa alis, mata bisa terganggu dan perih, jadi hargailah setiap bagian tubuhmu yang penting ini! Selalu jaga dan hargai keajaiban yang ada dalam tubuhmu!",
+      "timestamp": "2025-07-26T08:14:40.667Z",
+      "scores": {
+        "precision": 0.6810725927352905,
+        "recall": 0.798882782459259,
+        "f1": 0.7352886199951172
+      }
+    },
+    {
+      "question_id": 9,
+      "question": "Kenapa jagung meletus saat dipanaskan?",
+      "groundTruth": "Biji jagung popcorn meletus karena uap air di dalamnya mengembang saat dipanaskan, menciptakan tekanan hingga kulitnya pecah.",
+      "prediction": "Jagung adalah seperti bintang api kecil yang meledak dengan riang saat dipanaskan.\nButiran air di dalam jagung panas mengubah makanan menjadi jagung yang meletus dan mengembang.\nKalau tidak meletus, jagung tidak akan menjadi kembang api lezat yang kita nikmati.\nNikmati sensasi jagung meletus dengan senang hati dan jangan lupa berbagi dengan teman-temanmu!",
+      "timestamp": "2025-07-26T08:14:44.248Z",
+      "scores": {
+        "precision": 0.7728982728914638,
+        "recall": 0.7536252264333184,
+        "f1": 0.7630641304000473
+      }
+    },
+    {
+      "question_id": 10,
+      "question": "Kenapa gajah punya belalai?",
+      "groundTruth": "Belalai gajah berfungsi sebagai alat serbaguna untuk makan, minum, bernapas, dan berinteraksi, menggabungkan hidung dengan lengan.",
+      "prediction": "Belalai gajah adalah seperti snorkel besar yang membantu mereka bernapas dan minum air dengan mudah.\nGajah menggunakan belalai untuk mengambil makanan atau mandi dengan menyemprotkan air.\nTanpa belalai, gajah akan kesulitan melakukan banyak hal sehari-hari dengan lancar.\nTubuh gajah yang unik dan istimewa sangat membantu mereka bertahan hidup dengan baik di alam!",
+      "timestamp": "2025-07-26T08:14:47.847Z",
+      "scores": {
+        "precision": 0.771138659530025,
+        "recall": 0.7250854608559325,
+        "f1": 0.7473874472536938
+      }
+    },
+    {
+      "question_id": 11,
+      "question": "Kenapa logam terasa lebih dingin dari kayu?",
+      "groundTruth": "Logam terasa lebih dingin karena menghantarkan panas dari tubuh kita lebih cepat dibanding kayu yang bersifat isolator.",
+      "prediction": "Kalau logam seperti es batu yang menyentuh kulit, jadi terasa lebih dingin daripada kayu.\nLogam bisa dengan cepat menyerap panas dari tubuh, membuatnya terasa dingin saat disentuh.\nKalau tidak, sensasi dingin dari logam tidak akan terasa begitu jelas.\nHayo, jangan lupa kenakan sarung tangan saat menangani logam agar tetap nyaman!",
+      "timestamp": "2025-07-26T08:14:51.757Z",
+      "scores": {
+        "precision": 0.7618585988895596,
+        "recall": 0.7348863151755641,
+        "f1": 0.748111086900812
+      }
+    },
+    {
+      "question_id": 12,
+      "question": "Kenapa kanguru punya kantung?",
+      "groundTruth": "Kantung kanguru (marsupium) digunakan untuk membawa dan melindungi anaknya yang belum berkembang sempurna setelah lahir.",
+      "prediction": "Kantung kanguru seperti tas kecil yang selalu dibawa untuk membawa anak bayinya.\nAnak kanguru bisa tinggal di dalam kantung itu sambil dekat dengan ibunya.\nJika kanguru tidak punya kantung, anaknya akan kesulitan menemukan tempat perlindungan yang nyaman.\nJadi, apresiasi keistimewaan kanguru dengan kantung unik mereka!",
+      "timestamp": "2025-07-26T08:14:55.757Z",
+      "scores": {
+        "precision": 0.7586729412723129,
+        "recall": 0.7119499315546922,
+        "f1": 0.7344795437154323
+      }
+    },
+    {
+      "question_id": 13,
+      "question": "Kenapa beberapa hewan berhibernasi?",
+      "groundTruth": "Hibernasi adalah strategi hewan untuk menghemat energi saat sumber makanan langka, terutama di musim dingin, dengan memperlambat metabolisme.",
+      "prediction": "Sebagaimana kita suka tidur nyenyak di tempat hangat, beberapa hewan juga suka berhibernasi di musim dingin untuk menghemat energi.\nHibernasi membantu hewan bertahan ketika makanan sulit ditemukan di alam liar.\nTanpa berhibernasi, hewan mungkin akan kesulitan mencari makan dan bisa kekurangan energi saat musim dingin.\nJadi, hargailah istirahat yang penting bagi keberlangsungan hidup hewan-hewan tersebut!",
+      "timestamp": "2025-07-26T08:14:59.428Z",
+      "scores": {
+        "precision": 0.7804687663976855,
+        "recall": 0.740279498577404,
+        "f1": 0.7591072074209814
+      }
+    },
+    {
+      "question_id": 14,
+      "question": "Kenapa balon helium bisa terbang?",
+      "groundTruth": "Helium lebih ringan dari udara, sehingga balon yang diisi gas ini akan mengapung melawan gravitasi.",
+      "prediction": "Balon helium seperti pangeran angkasa kecil yang terbang menjelajahi langit.\nHelium adalah gas ringan yang membuat balon bisa melayang di udara.\nTanpa helium, balon akan jatuh ke tanah tanpa bergerak ke mana-mana.\nMari berimajinasi seakan-akan kita bisa terbang seperti balon helium, karena langit punya cerita indah yang menunggu untuk ditemukan!",
+      "timestamp": "2025-07-26T08:15:04.094Z",
+      "scores": {
+        "precision": 0.7949626381986916,
+        "recall": 0.7745080149308456,
+        "f1": 0.7844511531557914
+      }
+    },
+    {
+      "question_id": 15,
+      "question": "Kenapa bentuk bulan berubah-ubah?",
+      "groundTruth": "Fase bulan berubah karena pergerakan relatif Bulan, Bumi, dan Matahari, menyebabkan bagian yang terkena sinar Matahari terlihat berbeda dari Bumi.",
+      "prediction": "Bulan seperti kue yang digigit sedikit demi sedikit.\nSebenarnya bulan selalu bulat, tapi cahaya matahari yang meneranginya terlihat berbeda dari bumi.\nKalau tidak ada perubahan ini, malam akan terlihat sama terus.\nBentuk bulan yang berubah membuat malam jadi lebih menarik untuk diamati!",
+      "timestamp": "2025-07-26T08:15:07.433Z",
+      "scores": {
+        "precision": 0.751369411527592,
+        "recall": 0.7185044854041851,
+        "f1": 0.7344505767701137
+      }
+    },
+    {
+      "question_id": 16,
+      "question": "Mengapa cicak bisa memutuskan ekornya?",
+      "groundTruth": "Cicak memutuskan ekornya (autotomi) untuk mengalihkan perhatian predator sambil kabur, dan ekornya bisa tumbuh kembali.",
+      "prediction": "Cicak seperti pahlawan yang punya trik menyelamatkan diri dengan melepas ekornya!\nMereka bisa memutuskan ekor saat diserang oleh predator untuk mengalihkan perhatian musuh.\nTanpa trik keren ini, cicak mungkin akan menjadi mangsa bagi pemangsa dan sulit bertahan hidup.\nTeruslah belajar dari kecerdikan alam dan jadilah kuat seperti cicak yang selalu menemukan cara untuk tetap hidup!",
+      "timestamp": "2025-07-26T08:15:11.333Z",
+      "scores": {
+        "precision": 0.7873577598584083,
+        "recall": 0.7344357375979889,
+        "f1": 0.7597349143013953
+      }
+    },
+    {
+      "question_id": 17,
+      "question": "Kenapa gurita mengeluarkan tinta hitam saat terancam?",
+      "groundTruth": "Tinta gurita berfungsi sebagai kamuflase untuk mengaburkan pandangan predator, memberinya waktu melarikan diri.",
+      "prediction": "Gurita menyerupai pesulap dengan trik ajaibnya melepaskan tinta hitam saat berada dalam bahaya.\nMereka menggunakan tinta hitam untuk mengalihkan perhatian predator dan melarikan diri.\nJika gurita tidak mengeluarkan tinta, mereka mungkin akan lebih mudah diburu oleh pemangsa.\nKagumilah keahlian gurita dalam bertahan hidup dan temukan trik kecerdasan alam yang luar biasa!",
+      "timestamp": "2025-07-26T08:15:14.924Z",
+      "scores": {
+        "precision": 0.7912052917425627,
+        "recall": 0.7562723321394392,
+        "f1": 0.7730840397234
+      }
+    },
+    {
+      "question_id": 18,
+      "question": "Mengapa kelelawar tidur terbalik?",
+      "groundTruth": "Kelelawar tidur terbalik agar bisa langsung terbang dengan mudah, karena sayapnya membutuhkan posisi jatuh bebas untuk mulai mengepak.",
+      "prediction": "Tidur terbalik seperti bersantai di atas kursi goyang yang nyaman bagi kelelawar.\nMereka tidur terbalik agar bisa langsung terbang saat bangun tanpa harus berputar dulu.\nKalau tidak tidur terbalik, kelelawar harus membuang waktu berputar sebelum terbang, membuang tenaga.\nTidur terbalik membantu kelelawar tetap siap untuk terbang dan menjelajahi malam dengan lincah!",
+      "timestamp": "2025-07-26T08:15:19.334Z",
+      "scores": {
+        "precision": 0.8005542942840752,
+        "recall": 0.7737649909698173,
+        "f1": 0.786825008559959
+      }
+    },
+    {
+      "question_id": 19,
+      "question": "Kenapa kita cegukan?",
+      "groundTruth": "Cegukan terjadi akibat kontraksi tiba-tiba diafragma yang dipicu iritasi saraf, biasanya bersifat sementara.",
+      "prediction": "Cegukan itu seperti jalan napas yang tersandung batu kecil—tiba-tiba terhenti sejenak.\nCegukan terjadi karena otot pernapasan bernama diafragma bergerak tiba-tiba tanpa disengaja.\nKalau cegukan tidak berhenti, kita bisa merasa tidak nyaman saat makan atau bicara.\nTubuh kita unik dan punya cara sendiri untuk memberi tanda, jadi jangan khawatir saat cegukan muncul.",
+      "timestamp": "2025-07-26T08:15:23.094Z",
+      "scores": {
+        "precision": 0.7641648359925334,
+        "recall": 0.757448020589651,
+        "f1": 0.7607685331881482
+      }
+    },
+    {
+      "question_id": 20,
+      "question": "Kenapa layar sentuh bisa merespons sentuhan jari?",
+      "groundTruth": "Layar sentuh mendeteksi aliran listrik statis dari jari atau perubahan medan elektrik pada permukaannya.",
+      "prediction": "Layar sentuh seperti juru tulis pintar yang langsung mengikuti petunjuk jari yang menyentuhnya.\nLayar sentuh memiliki sensor yang merespons tekanan dari jari untuk mengeksekusi perintah.\nTanpa respon, layar sentuh tidak akan bekerja dengan baik dan membuat interaksi digital menjadi sulit.\nNikmati kemudahan menggunakan layar sentuh, dan teruslah jelajahi dunia digital dengan gembira!",
+      "timestamp": "2025-07-26T08:15:26.533Z",
+      "scores": {
+        "precision": 0.7536134328683838,
+        "recall": 0.7631073635582305,
+        "f1": 0.7582876614206183
+      }
+    }
+  ]
+}

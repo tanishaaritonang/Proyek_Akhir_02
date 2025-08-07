@@ -1,0 +1,78 @@
+ID,Question,Ground Truth,Prediction,Precision,Recall,F1
+1,Kenapa lebah membuat madu?,"Lebah membuat madu sebagai cadangan makanan di sarangnya, terutama untuk bertahan hidup saat musim dingin ketika nektar bunga sulit ditemukan.","Bisa dibayangkan kalau lebah itu seperti koki kecil yang rajin memasak makanan manis, yaitu madu, untuk kelompoknya.
+Lebah mengumpulkan nektar dari bunga dan mengubahnya menjadi madu di sarang mereka.
+Jika tidak ada madu, lebah tidak punya cadangan makanan, dan manusia juga kehilangan manfaatnya.
+Ayo belajar dari kerja keras lebah dan jaga kebersihan seperti mereka!",0.7677,0.7335,0.7500
+2,Kenapa ikan punya insang?,"Insang membantu ikan mengambil oksigen dari air, berfungsi seperti paru-paru yang disesuaikan untuk kehidupan di dalam air.","Insang merupakan seperti masker penyelam ikan yang membantu mereka bernapas dalam air.
+Ikan menggunakan insang untuk menyerap oksigen yang mereka butuhkan untuk hidup di dalam air.
+Tanpa insang, ikan tidak bisa bertahan hidup di dalam air dan mereka akan kesulitan bernapas.
+Ikan sungguh luar biasa dengan cara unik mereka untuk tetap hidup di lingkungan yang berbeda dengan manusia!",0.7870,0.7817,0.7843
+3,Kenapa daun-daun jatuh saat musim gugur?,"Pohon melepaskan daunnya untuk menghemat energi dan air selama musim dingin, serta mempersiapkan diri untuk pertumbuhan baru di musim semi.","Setiap daun seperti pesawat kertas yang turun ke tanah dengan anggun saat musim gugur tiba.
+Daun-daun jatuh karena pohonnya sudah siap memasuki musim dingin.
+Jatuhnya daun menyiratkan bahwa alam sedang berubah untuk beristirahat sejenak sebelum memulai siklus baru.
+Jadi, nikmati keindahan musim gugur yang penuh warna dan semangat baru yang akan datang!",0.7602,0.7238,0.7414
+4,Kenapa kucing mendengkur?,"Kucing mendengkur saat merasa nyaman atau ingin menenangkan diri, sebagai ekspresi rasa aman atau proses pemulihan.","Kucing mendengkur seperti mesin penenang hati yang menghadirkan kedamaian.
+Mereka mendengkur saat merasa nyaman, bahagia, atau sedang bersantai.
+Dengkuran kucing juga dapat menenangkan manusia yang sedang stres atau kelelahan.
+Dengarkanlah dengkuran kucing, karena ia bisa membawa ketenangan dalam kehidupan sehari-hari!",0.8271,0.7899,0.8080
+5,Kenapa bintang berkelap-kelip?,"Bintang tampak berkelap-kelip karena cahayanya melewati atmosfer Bumi yang bergolak, membiaskan cahaya secara tidak stabil.","Bintang seperti lampu kecil yang ditiup angin sehingga cahayanya berkelap-kelip dengan indah di langit.
+Hal ini disebabkan oleh belokan cahaya bintang di atmosfer Bumi yang membuatnya tampak berkelip.
+Tanpa atmosfer, bintang akan terlihat lebih stabil tanpa kelap-kelip yang menawan.
+Mari hiasi langit malam dengan cahaya indah bintang yang berkelap-kelip!",0.7898,0.7537,0.7713
+6,Kenapa kita bersin?,"Bersin adalah refleks tubuh untuk membersihkan hidung dari kotoran, kuman, atau partikel yang mengganggu saluran pernapasan.","Bersin seperti sapu otomatis untuk hidung kita.
+Saat ada debu atau kuman masuk, tubuh mengeluarkannya lewat bersin.
+Kalau tidak bersin, hidung bisa tetap terganggu dan terasa gatal.
+Bersin adalah cara tubuh menjaga saluran pernapasan tetap bersih! Semangat untuk tetap menjaga kesehatan hidung dengan bersin, Sahabat!",0.7646,0.7186,0.7408
+7,Kenapa laba-laba membuat jaring?,"Laba-laba membuat jaring untuk menangkap mangsa, menggunakan sutra yang lengket sebagai perangkap alami.","Jika laba-laba seperti tukang jahit dunia kecil yang membuat jaring untuk rumahnya.
+Mereka membuat jaring dari benang yang kuat untuk menangkap makanan seperti serangga.
+Tanpa jaring, laba-laba tidak bisa mendapatkan makanan yang mereka butuhkan.
+Hargailah karya seni alam laba-laba dan belajarlah rajin bekerja seperti mereka!",0.8008,0.7691,0.7846
+8,Kenapa kita punya alis?,"Alis melindungi mata dari keringat, air hujan, atau debu, sekaligus membantu ekspresi wajah.","Di dalam dunia yang luas ini, alis mata seperti payung kecil yang melindungi mata dari air dan debu. Alis membantu menjaga mata tetap bersih dan mengarahkan keringat agar tidak mengganggu penglihatan. Tanpa alis, mata bisa terganggu dan perih, jadi hargailah setiap bagian tubuhmu yang penting ini! Selalu jaga dan hargai keajaiban yang ada dalam tubuhmu!",0.6811,0.7989,0.7353
+9,Kenapa jagung meletus saat dipanaskan?,"Biji jagung popcorn meletus karena uap air di dalamnya mengembang saat dipanaskan, menciptakan tekanan hingga kulitnya pecah.","Jagung adalah seperti bintang api kecil yang meledak dengan riang saat dipanaskan.
+Butiran air di dalam jagung panas mengubah makanan menjadi jagung yang meletus dan mengembang.
+Kalau tidak meletus, jagung tidak akan menjadi kembang api lezat yang kita nikmati.
+Nikmati sensasi jagung meletus dengan senang hati dan jangan lupa berbagi dengan teman-temanmu!",0.7729,0.7536,0.7631
+10,Kenapa gajah punya belalai?,"Belalai gajah berfungsi sebagai alat serbaguna untuk makan, minum, bernapas, dan berinteraksi, menggabungkan hidung dengan lengan.","Belalai gajah adalah seperti snorkel besar yang membantu mereka bernapas dan minum air dengan mudah.
+Gajah menggunakan belalai untuk mengambil makanan atau mandi dengan menyemprotkan air.
+Tanpa belalai, gajah akan kesulitan melakukan banyak hal sehari-hari dengan lancar.
+Tubuh gajah yang unik dan istimewa sangat membantu mereka bertahan hidup dengan baik di alam!",0.7711,0.7251,0.7474
+11,Kenapa logam terasa lebih dingin dari kayu?,Logam terasa lebih dingin karena menghantarkan panas dari tubuh kita lebih cepat dibanding kayu yang bersifat isolator.,"Kalau logam seperti es batu yang menyentuh kulit, jadi terasa lebih dingin daripada kayu.
+Logam bisa dengan cepat menyerap panas dari tubuh, membuatnya terasa dingin saat disentuh.
+Kalau tidak, sensasi dingin dari logam tidak akan terasa begitu jelas.
+Hayo, jangan lupa kenakan sarung tangan saat menangani logam agar tetap nyaman!",0.7619,0.7349,0.7481
+12,Kenapa kanguru punya kantung?,Kantung kanguru (marsupium) digunakan untuk membawa dan melindungi anaknya yang belum berkembang sempurna setelah lahir.,"Kantung kanguru seperti tas kecil yang selalu dibawa untuk membawa anak bayinya.
+Anak kanguru bisa tinggal di dalam kantung itu sambil dekat dengan ibunya.
+Jika kanguru tidak punya kantung, anaknya akan kesulitan menemukan tempat perlindungan yang nyaman.
+Jadi, apresiasi keistimewaan kanguru dengan kantung unik mereka!",0.7587,0.7119,0.7345
+13,Kenapa beberapa hewan berhibernasi?,"Hibernasi adalah strategi hewan untuk menghemat energi saat sumber makanan langka, terutama di musim dingin, dengan memperlambat metabolisme.","Sebagaimana kita suka tidur nyenyak di tempat hangat, beberapa hewan juga suka berhibernasi di musim dingin untuk menghemat energi.
+Hibernasi membantu hewan bertahan ketika makanan sulit ditemukan di alam liar.
+Tanpa berhibernasi, hewan mungkin akan kesulitan mencari makan dan bisa kekurangan energi saat musim dingin.
+Jadi, hargailah istirahat yang penting bagi keberlangsungan hidup hewan-hewan tersebut!",0.7805,0.7403,0.7591
+14,Kenapa balon helium bisa terbang?,"Helium lebih ringan dari udara, sehingga balon yang diisi gas ini akan mengapung melawan gravitasi.","Balon helium seperti pangeran angkasa kecil yang terbang menjelajahi langit.
+Helium adalah gas ringan yang membuat balon bisa melayang di udara.
+Tanpa helium, balon akan jatuh ke tanah tanpa bergerak ke mana-mana.
+Mari berimajinasi seakan-akan kita bisa terbang seperti balon helium, karena langit punya cerita indah yang menunggu untuk ditemukan!",0.7950,0.7745,0.7845
+15,Kenapa bentuk bulan berubah-ubah?,"Fase bulan berubah karena pergerakan relatif Bulan, Bumi, dan Matahari, menyebabkan bagian yang terkena sinar Matahari terlihat berbeda dari Bumi.","Bulan seperti kue yang digigit sedikit demi sedikit.
+Sebenarnya bulan selalu bulat, tapi cahaya matahari yang meneranginya terlihat berbeda dari bumi.
+Kalau tidak ada perubahan ini, malam akan terlihat sama terus.
+Bentuk bulan yang berubah membuat malam jadi lebih menarik untuk diamati!",0.7514,0.7185,0.7345
+16,Mengapa cicak bisa memutuskan ekornya?,"Cicak memutuskan ekornya (autotomi) untuk mengalihkan perhatian predator sambil kabur, dan ekornya bisa tumbuh kembali.","Cicak seperti pahlawan yang punya trik menyelamatkan diri dengan melepas ekornya!
+Mereka bisa memutuskan ekor saat diserang oleh predator untuk mengalihkan perhatian musuh.
+Tanpa trik keren ini, cicak mungkin akan menjadi mangsa bagi pemangsa dan sulit bertahan hidup.
+Teruslah belajar dari kecerdikan alam dan jadilah kuat seperti cicak yang selalu menemukan cara untuk tetap hidup!",0.7874,0.7344,0.7597
+17,Kenapa gurita mengeluarkan tinta hitam saat terancam?,"Tinta gurita berfungsi sebagai kamuflase untuk mengaburkan pandangan predator, memberinya waktu melarikan diri.","Gurita menyerupai pesulap dengan trik ajaibnya melepaskan tinta hitam saat berada dalam bahaya.
+Mereka menggunakan tinta hitam untuk mengalihkan perhatian predator dan melarikan diri.
+Jika gurita tidak mengeluarkan tinta, mereka mungkin akan lebih mudah diburu oleh pemangsa.
+Kagumilah keahlian gurita dalam bertahan hidup dan temukan trik kecerdasan alam yang luar biasa!",0.7912,0.7563,0.7731
+18,Mengapa kelelawar tidur terbalik?,"Kelelawar tidur terbalik agar bisa langsung terbang dengan mudah, karena sayapnya membutuhkan posisi jatuh bebas untuk mulai mengepak.","Tidur terbalik seperti bersantai di atas kursi goyang yang nyaman bagi kelelawar.
+Mereka tidur terbalik agar bisa langsung terbang saat bangun tanpa harus berputar dulu.
+Kalau tidak tidur terbalik, kelelawar harus membuang waktu berputar sebelum terbang, membuang tenaga.
+Tidur terbalik membantu kelelawar tetap siap untuk terbang dan menjelajahi malam dengan lincah!",0.8006,0.7738,0.7868
+19,Kenapa kita cegukan?,"Cegukan terjadi akibat kontraksi tiba-tiba diafragma yang dipicu iritasi saraf, biasanya bersifat sementara.","Cegukan itu seperti jalan napas yang tersandung batu kecil—tiba-tiba terhenti sejenak.
+Cegukan terjadi karena otot pernapasan bernama diafragma bergerak tiba-tiba tanpa disengaja.
+Kalau cegukan tidak berhenti, kita bisa merasa tidak nyaman saat makan atau bicara.
+Tubuh kita unik dan punya cara sendiri untuk memberi tanda, jadi jangan khawatir saat cegukan muncul.",0.7642,0.7574,0.7608
+20,Kenapa layar sentuh bisa merespons sentuhan jari?,Layar sentuh mendeteksi aliran listrik statis dari jari atau perubahan medan elektrik pada permukaannya.,"Layar sentuh seperti juru tulis pintar yang langsung mengikuti petunjuk jari yang menyentuhnya.
+Layar sentuh memiliki sensor yang merespons tekanan dari jari untuk mengeksekusi perintah.
+Tanpa respon, layar sentuh tidak akan bekerja dengan baik dan membuat interaksi digital menjadi sulit.
+Nikmati kemudahan menggunakan layar sentuh, dan teruslah jelajahi dunia digital dengan gembira!",0.7536,0.7631,0.7583

@@ -740,7 +740,7 @@ input {
 
 .welcome-animation-wrapper {
   position: absolute;
-  bottom: 10%;
+  bottom: 0%;
   left: 0;
   z-index: 1000;
   pointer-events: none;
@@ -748,7 +748,7 @@ input {
 }
 
 .welcome-floating-image {
-  width: 180px;
+  width: 120px;
   height: auto;
   animation: avatarThinking 10s ease-in-out forwards;
 }
@@ -785,7 +785,8 @@ input {
 
 .avatar-floating-image.thinking {
   animation: avatarThinking 4.5s ease-in-out infinite;
-  width: 200px;
+  width: 200x;
+  height: 200px;
 }
 
 @keyframes avatarThinking {
@@ -964,8 +965,8 @@ input {
   }
   .popular-prompts-container{
       margin-top: 0; /* Pastikan margin top di 0 */
-          margin-top: 0;
-    padding-top: 0;
+      margin-top: 0;
+      padding-top: 0;
   }
   .sidebar {
     position: fixed;

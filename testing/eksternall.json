@@ -1,0 +1,373 @@
+{
+  "metadata": {
+    "evaluation_date": "2025-07-26T16:59:14.086960",
+    "total_questions": 30
+  },
+  "overall_scores": {
+    "precision": 0.7482913455204251,
+    "recall": 0.7447967676874853,
+    "f1": 0.7462427952356984
+  },
+  "detailed_results": [
+    {
+      "question_id": 1,
+      "question": "Kenapa lebah membuat madu?",
+      "groundTruth": "Lebah membuat madu sebagai cadangan makanan untuk koloninya, terutama saat sumber makanan langka di musim dingin.",
+      "prediction": "Dibandingkan dengan koki kecil, lebah membuat madu sebagai cadangan makanan manis untuk kelompoknya.\nMereka mengumpulkan nektar dari bunga dan mengubahnya menjadi madu di sarang.\nTanpa madu, lebah dan kita pun kehilangan manfaat yang bermanfaat.\nMadu adalah hasil kerja keras mereka—mari belajar dari kegigihan lebah yang rajin!",
+      "timestamp": "2025-07-26T09:54:16.510Z",
+      "scores": {
+        "precision": 0.7268025827164627,
+        "recall": 0.7200500253725438,
+        "f1": 0.7233321952252331
+      }
+    },
+    {
+      "question_id": 2,
+      "question": "Kenapa ikan punya insang?",
+      "groundTruth": "Insang adalah organ pernapasan ikan yang memungkinkan mereka mengekstrak oksigen dari air untuk bertahan hidup.",
+      "prediction": "Insang pada ikan seperti mesin pembersih udara mini untuk mereka di dalam air.\nMelalui insang, ikan bisa menyerap oksigen yang mereka butuhkan.\nJika ikan tidak punya insang, mereka akan kesulitan bernapas dan mungkin tidak bisa bertahan hidup di air.\nInsang ikan adalah cara unik alam memberikan solusi agar mereka tetap hidup di dalam air!",
+      "timestamp": "2025-07-26T09:54:21.370Z",
+      "scores": {
+        "precision": 0.7697568810192369,
+        "recall": 0.7641995081854815,
+        "f1": 0.7669436087106655
+      }
+    },
+    {
+      "question_id": 3,
+      "question": "Kenapa daun-daun jatuh saat musim gugur?",
+      "groundTruth": "Pohon menggugurkan daun sebagai adaptasi untuk menghemat air dan energi selama musim dingin.",
+      "prediction": "Daun-daun jatuh saat musim gugur seperti kelopak bunga yang layu saat musim panas berakhir.\nPohon melepaskan daun agar bisa menyimpan energi dan bertahan di musim dingin yang tiba.\nTetapnya daun di pohon bisa membuatnya kehabisan energi dan sulit bertahan hidup.\nJatuhnya daun menjadikan tanah kaya nutrisi untuk pertumbuhan di musim semi yang akan datang!",
+      "timestamp": "2025-07-26T09:54:25.369Z",
+      "scores": {
+        "precision": 0.8153410707369889,
+        "recall": 0.8098630083419167,
+        "f1": 0.8125403818159965
+      }
+    },
+    {
+      "question_id": 4,
+      "question": "Kenapa kucing mendengkur?",
+      "groundTruth": "Kucing mendengkur sebagai bentuk komunikasi, baik untuk mengekspresikan kenyamanan maupun untuk menenangkan diri.",
+      "prediction": "Kucing mendengkur seperti mesin kecil yang memberikan sinyal bahwa mereka merasa nyaman dan bahagia.\nDengan mendengkur, kucing menunjukkan bahwa mereka merasa aman dan tenang di sekitar kita.\nJika kucing tidak mendengkur, mungkin artinya mereka membutuhkan perhatian atau sedang merasa tidak nyaman.\nDengarkan suara mendengkur kucing dengan hati yang penuh pengertian, mereka ingin berbagi rasa bahagia mereka dengan kita!",
+      "timestamp": "2025-07-26T09:54:28.999Z",
+      "scores": {
+        "precision": 0.7643653485927359,
+        "recall": 0.7372603087869212,
+        "f1": 0.7505297512099176
+      }
+    },
+    {
+      "question_id": 5,
+      "question": "Kenapa bintang berkelap-kelip?",
+      "groundTruth": "Bintang tampak berkelap-kelip karena turbulensi atmosfer bumi yang membiaskan cahaya bintang.",
+      "prediction": "Bintang seperti lampu kecil yang dilihat lewat kaca berombak.\nUdara Bumi bergerak, jadi cahayanya tampak berkelip saat sampai ke mata kita.\nTanpa atmosfer, bintang terlihat diam dan tidak berkelip.\nBerkilau bintang bikin langit malam jadi indah dan ajaib!",
+      "timestamp": "2025-07-26T09:54:33.750Z",
+      "scores": {
+        "precision": 0.760538354165817,
+        "recall": 0.7277008585482078,
+        "f1": 0.7437409912542006
+      }
+    },
+    {
+      "question_id": 6,
+      "question": "Kenapa kita bersin?",
+      "groundTruth": "Bersin adalah refleks alami tubuh untuk membersihkan saluran hidung dari iritan atau partikel asing.",
+      "prediction": "Bersin seperti sapu otomatis yang membersihkan hidung.\nSaat debu atau kuman masuk, tubuh merespons dengan bersin untuk mengusirnya.\nJika tidak bersin, kotoran bisa masuk lebih dalam dan menyebabkan penyakit.\nBersin melindungi kita—tutup mulut saat melakukannya!",
+      "timestamp": "2025-07-26T09:54:37.620Z",
+      "scores": {
+        "precision": 0.7480733835741288,
+        "recall": 0.7283458728196086,
+        "f1": 0.7380509718571535
+      }
+    },
+    {
+      "question_id": 7,
+      "question": "Kenapa laba-laba membuat jaring?",
+      "groundTruth": "Laba-laba membuat jaring sebagai perangkap untuk menangkap mangsa berupa serangga.",
+      "prediction": "Membuat jaring seperti membangun rumah mini yang indah oleh laba-laba.\nJaringnya adalah tempat ia menangkap makanan seperti serangga yang lewat.\nTanpa jaring, laba-laba akan kesulitan mendapatkan makanan dan hidupnya terganggu.\nLaba-laba pintar dan ahli membuat jaring indah—biarkan mereka menjaga ekosistem dengan rumah-rumah kecil mereka!",
+      "timestamp": "2025-07-26T09:54:41.179Z",
+      "scores": {
+        "precision": 0.7567906151212256,
+        "recall": 0.7568891592258954,
+        "f1": 0.7566434514619123
+      }
+    },
+    {
+      "question_id": 8,
+      "question": "Kenapa kita punya alis?",
+      "groundTruth": "Alis berfungsi melindungi mata dari keringat, air hujan, dan partikel kecil lainnya.",
+      "prediction": "Sekecil kipas kecil yang menyejukkan mata kita dari hembusan angin.\nAlis membantu melindungi mata dari kotoran dan mengarahkan keringat jauh dari mata.\nKalau tanpa alis, mata bisa teriritasi dan susah fokus.\nJaga alismu dengan baik, karena mereka bekerja keras untuk melindungi mata kita!",
+      "timestamp": "2025-07-26T09:54:45.159Z",
+      "scores": {
+        "precision": 0.8050578921386535,
+        "recall": 0.7763066503784397,
+        "f1": 0.790416517303233
+      }
+    },
+    {
+      "question_id": 9,
+      "question": "Kenapa jagung meletus saat dipanaskan?",
+      "groundTruth": "Jagung popcorn meletus karena uap air di dalam biji mengembang saat dipanaskan, menciptakan tekanan hingga biji pecah.",
+      "prediction": "Jagung seperti kantong popcorn yang didorong untuk mulai meletus saat panas.\nSaat dipanaskan, air di dalam biji jagung menguap dan menciptakan tekanan di dalam.\nJagung meletus untuk menjadi camilan yang renyah dan lezat!\nNikmati popcorn yang empuk dan enak, tercipta dari proses ajaib jagung yang meletus!",
+      "timestamp": "2025-07-26T09:54:49.129Z",
+      "scores": {
+        "precision": 0.8133645002061528,
+        "recall": 0.7830750225412692,
+        "f1": 0.7978932269037529
+      }
+    },
+    {
+      "question_id": 10,
+      "question": "Kenapa gajah punya belalai?",
+      "groundTruth": "Belalai gajah adalah adaptasi evolusioner yang berfungsi sebagai alat serbaguna untuk makan, minum, dan berinteraksi.",
+      "prediction": "Belalai pada gajah seperti belut yang panjang dan fleksibel untuk membantu mereka makan dan minum dengan mudah.\nGajah menggunakan belalainya untuk menangkap makanan, minum air, dan berkomunikasi dengan sesama gajah.\nTanpa belalai, gajah kesulitan untuk mendapat makanan dan minuman dengan efisien.\nPada akhirnya, belalai gajah adalah anugerah alam yang unik untuk keberlangsungan hidup mereka yang selalu menakjubkan!",
+      "timestamp": "2025-07-26T09:54:53.090Z",
+      "scores": {
+        "precision": 0.767362181514916,
+        "recall": 0.7544623959397112,
+        "f1": 0.7608487952326595
+      }
+    },
+    {
+      "question_id": 11,
+      "question": "Kenapa logam terasa lebih dingin dari kayu?",
+      "groundTruth": "Logam terasa lebih dingin karena konduktivitas termalnya yang tinggi, sehingga cepat menyerap panas dari kulit.",
+      "prediction": "Logam seperti es batu yang meredam panas, jadi terasa lebih dingin dari kayu.\nKayu membiarkan panas meresap ke tangan, sedangkan logam menyerap panas dengan cepat.\nTanpa perbedaan tersebut, logam dan kayu akan terasa sama dinginnya.\nHargai keunikan bahan dan rasakan kesegaran yang ditawarkan logam yang dingin!",
+      "timestamp": "2025-07-26T09:54:56.419Z",
+      "scores": {
+        "precision": 0.7580325098046782,
+        "recall": 0.7175212062136007,
+        "f1": 0.7371617024547399
+      }
+    },
+    {
+      "question_id": 12,
+      "question": "Kenapa kanguru punya kantung?",
+      "groundTruth": "Kantung pada kanguru berfungsi sebagai tempat perkembangan bayi kanguru yang lahir prematur.",
+      "prediction": "Kantung pada kanguru seperti tas ransel yang nyaman dan fungsional.\nKantung tersebut digunakan untuk membawa anak kanguru yang masih kecil dan menyusui mereka.\nTanpa kantung, bayi kanguru tak akan bisa terlindungi dan diberi makan dengan mudah.\nKantung kanguru adalah satu keajaiban alam yang membuktikan betapa hebatnya kehidupan di alam semesta ini!",
+      "timestamp": "2025-07-26T09:54:59.729Z",
+      "scores": {
+        "precision": 0.7654925197920259,
+        "recall": 0.7985585107482879,
+        "f1": 0.7816321168891048
+      }
+    },
+    {
+      "question_id": 13,
+      "question": "Kenapa beberapa hewan berhibernasi?",
+      "groundTruth": "Hibernasi adalah strategi bertahan hidup saat sumber makanan langka dan suhu lingkungan ekstrem.",
+      "prediction": "Sama seperti kamu yang butuh tidur panjang, beberapa hewan berhibernasi untuk menghemat energi saat musim dingin tiba.\nDengan tidur panjang ini, mereka bisa bertahan tanpa makanan yang sulit ditemukan.\nJika tidak berhibernasi, hewan bisa kehabisan energi dan terancam kelaparan di musim dingin.\nSelamatkan tenaga seperti hewan yang cerdas berhibernasi!",
+      "timestamp": "2025-07-26T09:55:03.189Z",
+      "scores": {
+        "precision": 0.7102167244100108,
+        "recall": 0.7225237876394415,
+        "f1": 0.7162771899886866
+      }
+    },
+    {
+      "question_id": 14,
+      "question": "Kenapa balon helium bisa terbang?",
+      "groundTruth": "Balon helium bisa terbang karena helium memiliki massa jenis lebih rendah daripada udara di atmosfer.",
+      "prediction": "Balon helium seperti pemandangan yang terbang di langit biru dengan ringan dan bebas.\nHelium di dalam balon lebih ringan dari udara sekitar, mendorongnya untuk naik ke atas.\nKalau gas helium habis, balon bisa turun atau mengempis.\nNikmati pemandangan balon melayang di langit dan bangkitkan imajinasimu!",
+      "timestamp": "2025-07-26T09:55:06.579Z",
+      "scores": {
+        "precision": 0.7310979617382363,
+        "recall": 0.7409503195080499,
+        "f1": 0.735938132143054
+      }
+    },
+    {
+      "question_id": 15,
+      "question": "Kenapa bentuk bulan berubah-ubah?",
+      "groundTruth": "Fase bulan berubah karena posisi relatif bulan, bumi, dan matahari dalam orbitnya.",
+      "prediction": "Bulan adalah seperti potongan kue yang berubah sedikit demi sedikit setiap malam.\nSebenarnya bulan selalu bulat, tapi cahaya matahari yang mengenainya membuatnya terlihat berbeda dari bumi.\nJika bulan tidak berubah bentuk, malam akan terasa monoton dan kurang menarik untuk diamati.\nTetaplah mengamati perubahan bentuk bulan yang menakjubkan—malam jadi lebih indah berkat keajaiban alam ini!",
+      "timestamp": "2025-07-26T09:55:10.712Z",
+      "scores": {
+        "precision": 0.7065662654569977,
+        "recall": 0.7319384319792511,
+        "f1": 0.7188930738054523
+      }
+    },
+    {
+      "question_id": 16,
+      "question": "Mengapa cicak bisa memutuskan ekornya?",
+      "groundTruth": "Cicak bisa memutuskan ekornya (autotomi) sebagai mekanisme pertahanan untuk mengalihkan perhatian predator.",
+      "prediction": "Cicak bisa memutuskan ekornya seperti aksi sulap yang mempesona tanpa kehilangan sihirnya.\nMereka melakukan ini untuk mengalihkan perhatian musuhnya dan melarikan diri dalam situasi berbahaya.\nTanpa kemampuan ini, cicak bisa mudah menjadi mangsa dan kehilangan kesempatan untuk bertahan hidup.\nCicak pintar memilih bertahan hidup dengan taktik uniknya—ayo belajar dari kecerdasan mereka!",
+      "timestamp": "2025-07-26T09:55:14.743Z",
+      "scores": {
+        "precision": 0.7582557692696112,
+        "recall": 0.7297748524804797,
+        "f1": 0.7437118030998847
+      }
+    },
+    {
+      "question_id": 17,
+      "question": "Kenapa gurita mengeluarkan tinta hitam saat terancam?",
+      "groundTruth": "Gurita mengeluarkan tinta sebagai mekanisme pertahanan untuk membingungkan predator dan memudahkan pelarian.",
+      "prediction": "Mengapa gurita mengeluarkan tinta hitam saat terancam?\nSeperti pahlawan super yang melindungi diri dengan penyamaran, gurita menyemprotkan tinta hitam untuk mengalihkan perhatian musuh.\nTintanya membuat air keruh sehingga gurita bisa kabur tanpa terlihat.\nTanpa tinta hitam, gurita akan kesulitan melawan predator dan terancam bahaya.\nLindungi dirimu dengan kebijaksanaan gurita—teruslah berjuang!",
+      "timestamp": "2025-07-26T09:55:18.414Z",
+      "scores": {
+        "precision": 0.7357672462106669,
+        "recall": 0.7434185513413804,
+        "f1": 0.7393530863072231
+      }
+    },
+    {
+      "question_id": 18,
+      "question": "Mengapa kelelawar tidur terbalik?",
+      "groundTruth": "Kelelawar tidur terbalik karena posisi ini memudahkan mereka untuk segera terbang ketika diperlukan.",
+      "prediction": "Kelelawar tidur terbalik seperti tidur dengan posisi nyaman yang unik untuk mereka.\nDengan tidur terbalik, mereka bisa melindungi diri dari predator dan siap terbang lebih cepat saat bangun.\nJika kelelawar tidur dengan posisi berdiri, mungkin mereka akan lebih mudah diserang oleh predator.\nTidur terbalik memungkinkan kelelawar beristirahat dengan aman dan nyaman—sungguh luar biasa!",
+      "timestamp": "2025-07-26T09:55:22.232Z",
+      "scores": {
+        "precision": 0.7774001265277934,
+        "recall": 0.7745774612866447,
+        "f1": 0.7758716910001529
+      }
+    },
+    {
+      "question_id": 19,
+      "question": "Kenapa kita cegukan?",
+      "groundTruth": "Cegukan terjadi akibat kontraksi tiba-tiba diafragma yang dipicu berbagai faktor seperti iritasi saraf.",
+      "prediction": "Cegukan itu seperti suara klakson tiba-tiba dari tubuh yang kaget.\nCegukan terjadi karena otot pernapasan bergerak tiba-tiba tanpa sengaja.\nKalau cegukan terus-menerus, bisa membuat kita tidak nyaman saat bicara atau makan.\nTenang saja, cegukan biasanya hilang sendiri—tubuhmu tahu caranya berhenti!",
+      "timestamp": "2025-07-26T09:55:25.755Z",
+      "scores": {
+        "precision": 0.7671921735036872,
+        "recall": 0.73968729017639,
+        "f1": 0.7531635226673074
+      }
+    },
+    {
+      "question_id": 20,
+      "question": "Kenapa layar sentuh bisa merespons sentuhan jari?",
+      "groundTruth": "Layar sentuh bekerja dengan mendeteksi perubahan medan listrik atau tekanan dari sentuhan jari.",
+      "prediction": "Layar sentuh bisa dibandingkan dengan piranti ajaib yang merespons sentuhan jari layakna mantra. Layar tersebut memiliki lapisan khusus yang bereaksi saat jari menyentuhnya. Tanpa respon layar sentuh, kita akan kesulitan mengoperasikan teknologi modern. Nikmati interaksi dengan layar sentuh yang ajaib, dan jelajahi dunia digital dengan sentuhan jari!",
+      "timestamp": "2025-07-26T09:55:29.712Z",
+      "scores": {
+        "precision": 0.6581724882125854,
+        "recall": 0.7389346361160278,
+        "f1": 0.696219265460968
+      }
+    },
+    {
+      "question_id": 21,
+      "question": "Kenapa pesawat luar angkasa tidak jatuh dari langit?",
+      "groundTruth": "Pesawat luar angkasa tetap mengorbit karena keseimbangan antara kecepatan orbit dan gaya gravitasi bumi.",
+      "prediction": "Pesawat luar angkasa seperti kapal angkasa yang mengelilingi Bumi dengan gayanya sendiri.\nMereka bergerak sangat cepat agar bisa tetap berada di orbit mereka di luar atmosfer.\nJika pesawat luar angkasa kehilangan kecepatan, mereka bisa jatuh ke Bumi.\nBangga pada teknologi pesawat luar angkasa yang luar biasa—mereka membawa kita ke tempat yang tak terjangkau oleh pesawat biasa!",
+      "timestamp": "2025-07-26T09:55:33.242Z",
+      "scores": {
+        "precision": 0.75153207151231,
+        "recall": 0.7361211613519562,
+        "f1": 0.7436695583749622
+      }
+    },
+    {
+      "question_id": 22,
+      "question": "Kenapa pasir pantai terasa hangat di siang hari?",
+      "groundTruth": "Pasir pantai terasa hangat karena kemampuannya menyerap dan menyimpan panas dari sinar matahari.",
+      "prediction": "Saat siang hari, pasir pantai seperti selimut yang menyerap panas matahari dengan lembut.\nSinar matahari memanaskan butiran pasir sehingga terasa hangat di bawah kaki kita.\nJika tanpa paparan sinar matahari, pasir pantai akan terasa sejuk dan kedesakan.\nNikmati sensasi hangat pasir pantai di siang hari, mungkin seperti pelukan lembut dari alam!",
+      "timestamp": "2025-07-26T09:55:36.972Z",
+      "scores": {
+        "precision": 0.7484007199080733,
+        "recall": 0.7353215153508931,
+        "f1": 0.7417800047359702
+      }
+    },
+    {
+      "question_id": 23,
+      "question": "Mengapa gunung berapi bisa meletus?",
+      "groundTruth": "Gunung berapi meletus akibat akumulasi tekanan dari magma dan gas dalam perut bumi.",
+      "prediction": "Gunung berapi seperti panci tekan yang bisa meledak kapan saja.\nDidalamnya, magma panas berusaha mencari jalan keluar sampai panas menyembur ke permukaan.\nJika letusan terhambat, tekanan bisa bertambah hingga meledak dengan sangat keras.\nGunung berapi sungguh luar biasa, belajarlah bagaimana menjaga diri dari kekuatannya!",
+      "timestamp": "2025-07-26T09:55:41.174Z",
+      "scores": {
+        "precision": 0.7092750843542436,
+        "recall": 0.720398964333718,
+        "f1": 0.7147647266936835
+      }
+    },
+    {
+      "question_id": 24,
+      "question": "Kenapa salju hanya turun di daerah dingin?",
+      "groundTruth": "Salju terbentuk ketika suhu atmosfer cukup rendah untuk mengubah uap air langsung menjadi kristal es.",
+      "prediction": "Salju turun di daerah dingin seperti hujan es yang jatuh ke bumi ciptaan alam.\nSuhu dingin membuat air di awan berubah menjadi kristal es yang lembut dan turun sebagai salju.\nJika suhu tidak cukup rendah, air tidak bisa berubah menjadi salju dan hanya turun sebagai hujan biasa.\nNikmati keindahan salju di daerah dingin—alam memberikan pesona yang ajaib pada tiap musimnya!",
+      "timestamp": "2025-07-26T09:55:44.562Z",
+      "scores": {
+        "precision": 0.7550440842788905,
+        "recall": 0.7500361192642492,
+        "f1": 0.7524822302813149
+      }
+    },
+    {
+      "question_id": 25,
+      "question": "Kenapa burung hantu bisa melihat di malam hari?",
+      "groundTruth": "Burung hantu memiliki penglihatan malam yang tajam beradaptasi mata besar dan retina khusus.",
+      "prediction": "Mengapa burung hantu bisa melihat di malam hari?\nBurung hantu seperti matahari yang terang di kegelapan malam.\nMata dan pendengaran mereka sangat membantu ketika mencari mangsa di malam hari.\nTanpa kemampuan itu, burung hantu akan kesulitan berburu di gelap.\nBurung hantu selalu siap untuk petualangan malam yang penuh misteri!",
+      "timestamp": "2025-07-26T09:55:48.142Z",
+      "scores": {
+        "precision": 0.7726528539766324,
+        "recall": 0.7388841053440233,
+        "f1": 0.755314181495731
+      }
+    },
+    {
+      "question_id": 26,
+      "question": "Mengapa mimpi terkadang aneh dan tidak masuk akal?",
+      "groundTruth": "Mimpi aneh terjadi karena otak memproses informasi secara acak selama fase tidur REM.",
+      "prediction": "Mimpi seperti petualangan tanpa batas di dunia imajinasi kita.\nKetika otak kita memutar ingatan dan pikiran, kadang-kadang hasilnya jadi aneh dan tak masuk akal.\nYang penting, nikmati setiap petualangan mimpi dengan bahagia dan terbuka hati!\nTeruslah bermimpi dan jangan takut menjelajahi dunia misteri dalam tidurmu!",
+      "timestamp": "2025-07-26T09:55:51.672Z",
+      "scores": {
+        "precision": 0.7073065560392672,
+        "recall": 0.7151262352664252,
+        "f1": 0.71111422609074
+      }
+    },
+    {
+      "question_id": 27,
+      "question": "Kenapa kita suka mendengar cerita sebelum tidur?",
+      "groundTruth": "Cerita sebelum tidur membantu menenangkan pikiran dan mempersiapkan tubuh untuk tidur nyenyak.",
+      "prediction": "Mendengar cerita sebelum tidur seperti menonton pementasan drama sebelum tidur yang membuat kita terbuai.\nCerita-cerita itu memberikan hiburan dan kesempatan bagi otak kita untuk bersantai sebelum tidur.\nTanpa cerita sebelum tidur, tidurmu bisa kurang nyenyak dan terlewatkan momen magis menjelang mimpi.\nDengarkan dan nikmati setiap cerita sebelum tidur—selamat terlelap dan bermimpi indah, Sahabat Kecil!",
+      "timestamp": "2025-07-26T09:55:55.372Z",
+      "scores": {
+        "precision": 0.7478482271387693,
+        "recall": 0.7514699546023959,
+        "f1": 0.7495653862916943
+      }
+    },
+    {
+      "question_id": 28,
+      "question": "Mengapa sendok logam terasa panas jika dipakai mengaduk teh panas?",
+      "groundTruth": "Sendok logam terasa panas karena konduktivitas termalnya yang tinggi mentransfer panas dari cairan ke tangan.",
+      "prediction": "Saat digunakan untuk mengaduk teh panas, sendok logam seperti bertemu dengan sahabat yang sedang berapi-api.\nLogam bisa dengan mudah menyerap panas teh panas, membuatnya terasa panas saat disentuh.\nJika digunakan sendok plastik, tidak akan terasa panas karena plastik tidak menghantarkan panas sama efisiennya.\nNikmati teh panas dengan sendok logam, dan hati-hati agar tidak terbakar!",
+      "timestamp": "2025-07-26T09:56:01.635Z",
+      "scores": {
+        "precision": 0.7402973343687232,
+        "recall": 0.7137544454723754,
+        "f1": 0.7267401444457724
+      }
+    },
+    {
+      "question_id": 29,
+      "question": "Mengapa sabun bisa membersihkan kotoran?",
+      "groundTruth": "Sabun membersihkan dengan mengikat molekul minyak dan kotoran sehingga bisa dibilas dengan air.",
+      "prediction": "Sabun adalah seperti detektif kecil yang mampu menjebak kotoran dan mencuci nya bersih.\nDengan kandungan zat yang mampu mengangkat kotoran, sabun membantu membersihkan kulit secara menyeluruh.\nJika tidak menggunakan sabun, kotoran bisa menumpuk di kulit dan menimbulkan berbagai masalah kesehatan.\nGunakan sabun dengan rajin untuk kulit yang bersih dan sehat, dan jangan lupa untuk membersihkan diri dengan menyenangkan!",
+      "timestamp": "2025-07-26T09:56:06.243Z",
+      "scores": {
+        "precision": 0.7599264283468276,
+        "recall": 0.7755437920613103,
+        "f1": 0.7676079385411039
+      }
+    },
+    {
+      "question_id": 30,
+      "question": "Mengapa langit biru di siang hari tapi merah saat matahari terbenam?",
+      "groundTruth": "Warna langit berubah karena hamburan Rayleigh yang mempengaruhi panjang gelombang cahaya matahari berbeda.",
+      "prediction": "Langit seperti kanvas indah yang berubah warna seiring jalan waktu. Pada siang hari, langit biru karena sinar matahari tersebar di atmosfer. Saat matahari terbenam, sinarnya harus melewati lebih banyak udara, menciptakan warna merah yang indah. Menikmati perubahan warna langit adalah seperti menyaksikan lukisan alam yang selalu menakjubkan!",
+      "timestamp": "2025-07-26T09:56:10.083Z",
+      "scores": {
+        "precision": 0.6608104109764099,
+        "recall": 0.7112088799476624,
+        "f1": 0.6850839853286743
+      }
+    }
+  ]
+}

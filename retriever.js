@@ -1,6 +1,9 @@
 import { createClient} from "@supabase/supabase-js"
 import { SupabaseVectorStore } from "@langchain/community/vectorstores/supabase";
 import { OpenAIEmbeddings } from "@langchain/openai";
+import dotenv from "dotenv";
+dotenv.config();
+
 
 
     const supabaseKey= process.env.SUPABASE_KEY

@@ -419,83 +419,84 @@ userInput.addEventListener("keypress", (e) => {
 });
 
 async function handleUserMessage() {
-  const question = userInput.value;
-  if (!question.trim()) return;
+  const question = userInput.value.trim();
+  if (!question) return;
 
+  // Bersihkan UI secepat mungkin
   userInput.value = "";
   button.disabled = true;
-  const defaultText = chatbotConversation.querySelector(".default-text");
-  if (defaultText) {
-    defaultText.remove();
-  }
   
-  const popularPrompts = document.getElementById("popular-prompts-container");
-  if (popularPrompts) {
-    popularPrompts.style.display="none";
-  }
+  // Hapus elemen yang tidak perlu dengan cara lebih efisien
+  const defaultText = chatbotConversation.querySelector(".default-text");
+  defaultText?.remove();
+  
+  document.getElementById("popular-prompts-container")?.style.setProperty("display", "none", "important");
 
-
+  // Tambahkan pesan user segera
   addMessageToUI(question, "human");
-  showThinkingAnimation("./img/thinking.png");
-
-
-
-  const loadingBubble = document.createElement("div");
-  loadingBubble.classList.add("speech", "speech-ai");
-  loadingBubble.innerHTML =
-    '<div class="typing-indicator"><span></span><span></span><span></span></div>';
-  chatbotConversation.appendChild(loadingBubble);
-  chatbotConversation.scrollTop = chatbotConversation.scrollHeight;
-
-  const urlParams = new URLSearchParams(window.location.search);
-  const urlSessionId = urlParams.get("sessionId");
-
-  if (urlSessionId) {
-    sessionId = urlSessionId;
-  }
+  
+  // Gunakan requestAnimationFrame untuk animasi yang lebih smooth
+  requestAnimationFrame(() => {
+    showThinkingAnimation("./img/thinking.png");
+    
+    // Buat loading bubble setelah animasi thinking dimulai
+    const loadingBubble = document.createElement("div");
+    loadingBubble.classList.add("speech", "speech-ai", "loading-bubble");
+    loadingBubble.innerHTML = '<div class="typing-indicator"><span></span><span></span><span></span></div>';
+    chatbotConversation.appendChild(loadingBubble);
+    chatbotConversation.scrollTop = chatbotConversation.scrollHeight;
+  });
 
   try {
+    // Gunakan AbortController untuk timeout
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), 30000); // Timeout 30 detik
+
     const response = await fetch("/chat", {
       method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
+      headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
         question,
-        sessionId,
+        sessionId: new URLSearchParams(window.location.search).get("sessionId") || sessionId
       }),
+      signal: controller.signal
+    });
+    clearTimeout(timeoutId);
+
+    if (!response.ok) throw new Error(`HTTP error ${response.status}`);
+    
+    const responseData = await response.json();
+    
+    // Hapus animasi secepat mungkin
+    requestAnimationFrame(() => {
+      document.querySelector(".loading-bubble")?.remove();
+      clearThinkingAnimation();
+      
+      // Tambahkan respons dengan optimasi animasi
+      addMessageToUI(responseData, "ai");
+      
+      // Jika voice message, jalankan tanpa blocking
+      if (isVoiceMessage) {
+        isVoiceMessage = false;
+        setTimeout(() => speakText(responseData), 300); // Beri jeda kecil
+      }
+      
+      // Animasi floating yang lebih ringan
+      showOptimizedFloatingAnimation();
     });
 
-    if (!response.ok) {
-      throw new Error(`HTTP error ${response.status}`);
-    }
-    const responseData = await response.json();
-    chatbotConversation.removeChild(loadingBubble);
-
-    // Clear thinking animation before showing response
-    clearThinkingAnimation();
-    
-    addMessageToUI(responseData, "ai");
-   if (isVoiceMessage) {
-      speakText(responseData);
-      isVoiceMessage = false; // Reset flag
-    }
-
-    showFloatingAnimation(['🌟']);
-    fetchChatSessions();
-
   } catch (error) {
-    console.error("Error fetching data:", error);
-    chatbotConversation.removeChild(loadingBubble);
-
-    // Clear thinking animation on error too
-    clearThinkingAnimation();
-
-    addMessageToUI(
-      "Sorry, I encountered an error. Please try again.",
-      "ai",
-      true
-    );
+    requestAnimationFrame(() => {
+      document.querySelector(".loading-bubble")?.remove();
+      clearThinkingAnimation();
+      addMessageToUI(
+        error.name === 'AbortError' 
+          ? "Permintaan timeout. Silakan coba lagi." 
+          : "Sorry, I encountered an error. Please try again.",
+        "ai",
+        true
+      );
+    });
   } finally {
     button.disabled = false;
   }
@@ -520,7 +521,7 @@ function addMessageToUI(message, sender, isError = false, animate = true) {
     setTimeout(() => {
       // Start typing animation
       typeMessage(message, newSpeechBubble);
-    }, 1000); // Show the dots for 1 second before starting to type
+    }, 300); // Show the dots for 1 second before starting to type
   } else {
     // For human messages or non-animated AI messages, just display immediately
     newSpeechBubble.textContent = message;
@@ -532,27 +533,25 @@ function addMessageToUI(message, sender, isError = false, animate = true) {
 
 // Function to simulate typing animation
 function typeMessage(message, element) {
+  element.style.contentVisibility = 'auto'; // Optimasi render
+  
   let i = 0;
-  const typingSpeed = 10; // Milliseconds per character
+  const chunkSize = Math.max(5, Math.floor(message.length / 20)); // Adaptive chunk size
+  const typingSpeed = Math.max(20, 100 - (message.length / 2)); // Adaptive speed
 
-  // Clear the typing indicator but keep the element
-  element.innerHTML = "";
-
-  // Create a typing animation
-  const typingInterval = setInterval(() => {
+  function typeChunk() {
+    const end = Math.min(i + chunkSize, message.length);
+    element.textContent = message.substring(0, end);
+    i = end;
+    
     if (i < message.length) {
-      element.textContent += message.charAt(i);
-      i++;
-
-      // Scroll to bottom with each character
-      chatbotConversation.scrollTop = chatbotConversation.scrollHeight;
+      setTimeout(typeChunk, typingSpeed);
     } else {
-      clearInterval(typingInterval);
-
-      // Scroll to bottom again when done
       chatbotConversation.scrollTop = chatbotConversation.scrollHeight;
     }
-  }, typingSpeed);
+  }
+  
+  typeChunk();
 }
 
 function showFloatingAnimation(emoji = '⭐') {
@@ -562,14 +561,14 @@ function showFloatingAnimation(emoji = '⭐') {
   icon.textContent = emoji;
 
   // Set random X offset for variation
-  icon.style.left = `${Math.random() * 100 - 50}%`;
+  icon.style.left = `${Math.random() * 80 - 10}%`;
 
   container.appendChild(icon);
 
   // Hapus animasi setelah selesai
   setTimeout(() => {
     container.removeChild(icon);
-  }, 2000);
+  }, 200);
 }
 
 function showWelcomeAnimation(imagePath = './img/welcome.jpg') {
